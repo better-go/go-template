@@ -57,6 +57,76 @@ mkdir {{cookiecutter.repo_name}}
 ```
 
 
+## mono repo structure:
+
+
+```bash 
+
+[~/cookiecutter-go/{{cookiecutter.repo_name}}] [master]
+
+-> % tree . -L 5
+.
+├── Makefile
+├── README.MD
+├── app
+│   ├── basic
+│   │   ├── user
+│   │   │   ├── auth
+│   │   │   ├── identity
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── cmd
+│   │   │   │   ├── configs
+│   │   │   │   ├── docs
+│   │   │   │   ├── internal
+│   │   │   │   ├── proto
+│   │   │   │   └── readme.md
+│   │   │   ├── permission
+│   │   │   ├── readme.md
+│   │   │   └── role
+│   │   └── {{cookiecutter.basic_app_name}}
+│   │       ├── cmd
+│   │       │   └── main.go
+│   │       ├── configs
+│   │       │   └── configs.toml
+│   │       ├── docs
+│   │       ├── internal
+│   │       │   ├── dao
+│   │       │   ├── domain
+│   │       │   └── service
+│   │       └── proto
+│   │           ├── api
+│   │           ├── config
+│   │           └── model
+│   ├── biz
+│   │   └── {{cookiecutter.biz_app_name}}
+│   │       └── cmd
+│   │           └── main.go
+│   └── std
+│       ├── Makefile
+│       ├── proto
+│       │   ├── config
+│       │   │   └── config.proto
+│       │   └── error
+│       │       └── code.proto
+│       └── readme.md
+├── deploy
+│   ├── local
+│   │   └── Makefile
+│   └── staging
+│       └── Makefile
+├── go.mod
+├── infra
+│   └── tool
+├── pkg
+├── script
+└── tmp
+
+39 directories, 15 files
+
+
+```
+
+
 ## ref: 
 
 - https://github.com/pydanny/cookiecutter-django
