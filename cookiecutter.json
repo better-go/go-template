@@ -1,10 +1,12 @@
 {
+  "repo_name": "mono",
   "project_name": "mono repo",
   "full_name": "henry",
   "email": "hhglory@outlook.com",
-  "repo_name": "mono",
   "project_short_description": "mono repo project generator.",
   "release_date": "2020-06-01",
   "year": "2020",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "basic_app_name": "basic_app",
+  "biz_app_name": "biz_app"
 }
