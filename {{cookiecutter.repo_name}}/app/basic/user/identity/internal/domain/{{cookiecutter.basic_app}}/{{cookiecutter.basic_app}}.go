@@ -1,1 +1,0 @@
-package __cookiecutter_basic_app__
