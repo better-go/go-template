@@ -15,14 +15,14 @@ def validate_name(regex):
     # validate:
     for name in names:
         if not re.match(regex, name):
+            print('ERROR: The project name (%s) is not a valid module name. Please do not use a - and use _ instead' % name)
             return false
+    # ok:
     return true
 
 
 if __name__ == '__main__':
     # validate:
     if not validate_name(MODULE_REGEX):
-        print('ERROR: The project name (%s) is not a valid module name. Please do not use a - and use _ instead' % module_name)
-
         # Exit to cancel project
         sys.exit(1)
