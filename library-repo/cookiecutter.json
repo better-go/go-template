@@ -1,0 +1,18 @@
+{
+    "repo_name": "package",
+    "project_short_description": "a golang package repo generator.",
+
+
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ],
+    "author_name": "Henry",
+    "email": "hhglory@outlook.com",
+    "release_date": "2020-06-01",
+    "year": "2020",
+    "version": "0.1.0"
+}
