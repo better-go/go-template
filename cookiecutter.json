@@ -3,14 +3,6 @@
         "Single Micro Service: App Folder",
         "Mono Repo: Root Folder"
     ],
-    "author_name": "Henry",
-    "open_source_license": [
-        "MIT",
-        "BSD",
-        "GPLv3",
-        "Apache Software License 2.0",
-        "Not open source"
-    ],
     "framework_type": [
         "go-micro",
         "gin"
@@ -27,21 +19,32 @@
         "nsq",
         "nat"
     ],
-    "app": {
-        "name": "app1",
-        "go_module_name": "go_mod_name",
-        "relative_path": "root/path/to/here",
-        "use_grpc": "y",
-        "use_http": "y"
-    },
-    "timezone": "UTC",
+    "use_grpc": "y",
+    "use_http": "y",
+
+
+    "app_name": "app1",
+    "app_go_module_name": "go_mod_name",
+    "app_relative_path": "project/root/path/to/here",
+
+
     "repo_name": "mono",
-    "project_name": "mono repo",
-    "email": "hhglory@outlook.com",
+    "basic_app_name": "basic_app",
+    "biz_app_name": "biz_app",
+
+
+    "timezone": "UTC",
     "project_short_description": "mono repo project generator.",
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ],
+    "author_name": "Henry",
+    "email": "hhglory@outlook.com",
     "release_date": "2020-06-01",
     "year": "2020",
-    "version": "0.1.0",
-    "basic_app_name": "basic_app",
-    "biz_app_name": "biz_app"
+    "version": "0.1.0"
 }
