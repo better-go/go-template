@@ -14,7 +14,3 @@ def single_app_create():
 
 if __name__ == '__main__':
     single_app_create()
-
-    # clean:
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        remove_file('LICENSE')
