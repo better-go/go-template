@@ -1,5 +1,6 @@
 {
-    "app_name": "app1",
+    "app_name": "current_app_name",
+    "repo_name": "repo_folder_name",
     "app_go_module_name": "go_mod_name",
     "app_relative_path": "project/root/path/to/here",
 
