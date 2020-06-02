@@ -1,4 +1,4 @@
-package http
+package rpc
 
 import (
     "{{cookiecutter.app_relative_path}}/{{cookiecutter.app_name}}/proto/config"
@@ -7,16 +7,16 @@ import (
 )
 
 // 极光推送 API 对接:
-type DemoHttp struct {
+type DemoRpc struct {
 }
 
-func newDemoHttp(cfg *config.HTTPConfig) *DemoHttp {
+func newDemoRpc(cfg *config.HTTPConfig) *DemoRpc {
 
-    return &DemoHttp{
+    return &DemoRpc{
     }
 }
 
-func (m *DemoHttp) Hello(message string) error {
+func (m *DemoRpc) Hello(message string) error {
     log.Debugf("demo.Hello done, req=%+v", message)
     return nil
 }

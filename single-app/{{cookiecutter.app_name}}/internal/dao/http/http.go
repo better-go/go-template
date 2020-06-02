@@ -11,7 +11,7 @@ import (
 
 type Dao struct {
     // biz group:
-    Demo *DemoHttp // 极光推送服务
+    Demo *DemoHttp // demo http
 }
 
 func New(cfg *config.HTTPConfig) *Dao {

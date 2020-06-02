@@ -1,4 +1,4 @@
-package http
+package db
 
 import (
     "{{cookiecutter.app_relative_path}}/{{cookiecutter.app_name}}/proto/config"
@@ -7,16 +7,16 @@ import (
 )
 
 // 极光推送 API 对接:
-type DemoHttp struct {
+type DemoDB struct {
 }
 
-func newDemoHttp(cfg *config.HTTPConfig) *DemoHttp {
+func newDemoDB(cfg *config.HTTPConfig) *DemoDB {
 
-    return &DemoHttp{
+    return &DemoDB{
     }
 }
 
-func (m *DemoHttp) Hello(message string) error {
+func (m *DemoDB) Hello(message string) error {
     log.Debugf("demo.Hello done, req=%+v", message)
     return nil
 }
