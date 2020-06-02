@@ -30,7 +30,7 @@ sudo apt-get install cookiecutter
 
 ```
 
-### create mono repo :
+### create mono repo:
 
 - git repo / project root.
 - 根据命令行参数提升, 逐步创建.
@@ -56,6 +56,22 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="singl
 
 
 ```
+
+
+### create library repo:
+
+- `library-repo`
+
+```bash
+
+cd your-workspace/
+
+# 在当前目录下, 创建mono repo 项目根目录:
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="library-repo"
+
+```
+
+
 
 ## mono repo structure:
 
