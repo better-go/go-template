@@ -1,1 +1,1 @@
-package __cookiecutter_app_name__
+package {{cookiecutter.app_name}}
