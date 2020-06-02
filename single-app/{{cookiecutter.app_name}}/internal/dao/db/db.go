@@ -14,7 +14,7 @@ type Dao struct {
     Demo *DemoDB // demo db
 }
 
-func New(cfg *config.HTTPConfig) *Dao {
+func New(cfg *config.DBUnit) *Dao {
     return &Dao{
         Demo: newDemoDB(cfg),
     }

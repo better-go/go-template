@@ -14,7 +14,7 @@ type Dao struct {
     Demo *DemoHttp // demo http
 }
 
-func New(cfg *config.HTTPConfig) *Dao {
+func New(cfg *config.HttpUnit) *Dao {
     return &Dao{
         Demo: newDemoHttp(cfg),
     }

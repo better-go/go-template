@@ -10,7 +10,7 @@ import (
 type DemoHttp struct {
 }
 
-func newDemoHttp(cfg *config.HTTPConfig) *DemoHttp {
+func newDemoHttp(cfg *config.HttpUnit) *DemoHttp {
 
     return &DemoHttp{
     }

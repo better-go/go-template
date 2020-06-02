@@ -14,7 +14,7 @@ type Dao struct {
     Demo *DemoRpc // demo rpc
 }
 
-func New(cfg *config.HTTPConfig) *Dao {
+func New(cfg *config.RpcUnit) *Dao {
     return &Dao{
         Demo: newDemoRpc(cfg),
     }

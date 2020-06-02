@@ -15,9 +15,9 @@ type Scope struct {
 }
 
 //
-func NewScope(httpCfg *config.HTTPConfig) *Scope {
+func NewScope(cfg *config.Config) *Scope {
     // global:
-    g := dao.NewMetaResource(httpCfg)
+    g := dao.NewMetaResource(cfg)
 
     return &Scope{
         g: g,

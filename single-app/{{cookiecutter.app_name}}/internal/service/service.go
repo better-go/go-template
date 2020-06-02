@@ -15,9 +15,9 @@ type Service struct {
     Demo *{{cookiecutter.app_name}}.Scope // 推送服务
 }
 
-func New(httpCfg *config.HTTPConfig) *Service {
+func New(cfg *config.Config) *Service {
     return &Service{
-        Demo: {{cookiecutter.app_name}}.NewScope(httpCfg),
+        Demo: {{cookiecutter.app_name}}.NewScope(cfg),
     }
 }
 

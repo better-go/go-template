@@ -75,7 +75,7 @@ func ping(c *gin.Context) {
 // @Success 200 {string} string "{"code":200,"data":{},"msg":"ok"}"
 // @Router /api/v1/demo/hello [post]
 func hello(ctx *gin.Context) {
-    var req *api.NotifyReq
+    var req *api.HelloReq
 
     // validate:
     if err := ctx.ShouldBind(&req); err != nil {
@@ -89,14 +89,14 @@ func hello(ctx *gin.Context) {
     //
     // ok: do logic
     //
-    resp, err := gs.PushOne(ctx, req)
-    log.Debugf("push api done, req=%+v, resp=%+v, err=%v", req, resp, err)
+    resp, err := gs.Hello(ctx, req)
+    log.Debugf("demo.Hello api done, req=%+v, resp=%+v, err=%v", req, resp, err)
 
     //
     // return ok
     //
     ctx.JSON(200, gin.H{
-        "message": "pushOne 推送成功",
+        "message": "echo hello done",
     })
 }
 

@@ -10,7 +10,7 @@ import (
 type DemoRpc struct {
 }
 
-func newDemoRpc(cfg *config.HTTPConfig) *DemoRpc {
+func newDemoRpc(cfg *config.RpcUnit) *DemoRpc {
 
     return &DemoRpc{
     }

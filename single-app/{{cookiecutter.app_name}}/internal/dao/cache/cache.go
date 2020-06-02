@@ -14,7 +14,7 @@ type Dao struct {
     Demo *DemoCache // demo cache
 }
 
-func New(cfg *config.HTTPConfig) *Dao {
+func New(cfg *config.CacheUnit) *Dao {
     return &Dao{
         Demo: newDemoCache(cfg),
     }

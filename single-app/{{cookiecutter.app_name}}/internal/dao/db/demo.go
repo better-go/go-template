@@ -10,7 +10,7 @@ import (
 type DemoDB struct {
 }
 
-func newDemoDB(cfg *config.HTTPConfig) *DemoDB {
+func newDemoDB(cfg *config.DBUnit) *DemoDB {
 
     return &DemoDB{
     }

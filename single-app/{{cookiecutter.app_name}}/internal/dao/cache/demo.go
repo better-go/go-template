@@ -10,7 +10,7 @@ import (
 type DemoCache struct {
 }
 
-func newDemoCache(cfg *config.HTTPConfig) *DemoCache {
+func newDemoCache(cfg *config.CacheUnit) *DemoCache {
 
     return &DemoCache{
     }
