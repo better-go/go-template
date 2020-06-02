@@ -16,9 +16,9 @@ def validate_name(regex):
     for name in names:
         if not re.match(regex, name):
             print('ERROR: The project name (%s) is not a valid module name. Please do not use a - and use _ instead' % name)
-            return false
+            return False
     # ok:
-    return true
+    return True
 
 
 if __name__ == '__main__':
