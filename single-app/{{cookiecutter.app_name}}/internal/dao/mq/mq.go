@@ -16,7 +16,7 @@ type Dao struct {
 
 func New(cfg *config.MQUnit) *Dao {
     return &Dao{
-        Demo: newDemoHttp(cfg),
+        Demo: newDemoMQ(cfg),
     }
 }
 
