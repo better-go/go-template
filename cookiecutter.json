@@ -1,12 +1,47 @@
 {
-  "repo_name": "mono",
-  "project_name": "mono repo",
-  "full_name": "henry",
-  "email": "hhglory@outlook.com",
-  "project_short_description": "mono repo project generator.",
-  "release_date": "2020-06-01",
-  "year": "2020",
-  "version": "0.1.0",
-  "basic_app_name": "basic_app",
-  "biz_app_name": "biz_app"
+    "folder_type": [
+        "Single Micro Service: App Folder",
+        "Mono Repo: Root Folder"
+    ],
+    "author_name": "Henry",
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ],
+    "framework_type": [
+        "go-micro",
+        "gin"
+    ],
+    "db_type": "mysql",
+    "orm_type": [
+        "gorm",
+        "xorm"
+    ],
+    "cache_type": "redis",
+    "mq_type": [
+        "kafka",
+        "rabbitmq",
+        "nsq",
+        "nat"
+    ],
+    "app": {
+        "name": "app1",
+        "go_module_name": "go_mod_name",
+        "relative_path": "root/path/to/here",
+        "use_grpc": "y",
+        "use_http": "y"
+    },
+    "timezone": "UTC",
+    "repo_name": "mono",
+    "project_name": "mono repo",
+    "email": "hhglory@outlook.com",
+    "project_short_description": "mono repo project generator.",
+    "release_date": "2020-06-01",
+    "year": "2020",
+    "version": "0.1.0",
+    "basic_app_name": "basic_app",
+    "biz_app_name": "biz_app"
 }
