@@ -5,7 +5,7 @@
 - go 微服务项目目录生成工具
 - mono repo 范式.
 
-## brief: 
+## brief:
 
 - https://github.com/better-go/cookiecutter-go
     - 生成 mono repo 整个项目目录
@@ -19,7 +19,7 @@
 - https://cookiecutter.readthedocs.io/en/1.7.2/installation.html
 - 基于 cookiecutter 实现.
 
-```bash 
+```bash
 
 # 安装 cookiecutter:
 brew install cookiecutter
@@ -60,7 +60,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go-app.git
 - repo_name
 
 
-```bash 
+```bash
 
 mkdir {{cookiecutter.directory_name}}
 mkdir {{cookiecutter.repo_name}}
@@ -71,7 +71,7 @@ mkdir {{cookiecutter.repo_name}}
 ## mono repo structure:
 
 
-```bash 
+```bash
 
 [~/cookiecutter-go/{{cookiecutter.repo_name}}] [master]
 
@@ -138,8 +138,9 @@ mkdir {{cookiecutter.repo_name}}
 ```
 
 
-## ref: 
+## ref:
 
+- https://github.com/audreyr/cookiecutter-pypackage
 - https://github.com/pydanny/cookiecutter-django
     - https://github.com/pydanny/cookiecutter-django/blob/master/cookiecutter.json
 - https://github.com/golang-standards/project-layout
