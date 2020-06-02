@@ -36,10 +36,10 @@ func main() {
 
     // 默认路径解析配置:
     errors.PanicError(conf.LoadConfig(&cfg, config.RepoName, config.AppName))
-    log.Debugf("current config info: %+v", cfg.HTTP.JPush)
+    log.Debugf("current config info: %+v", cfg.HTTP)
 
     // service:
-    srv := service.New(cfg.HTTP)
+    srv := service.New(cfg)
 
     // register api:
     router.RegisterRouter(r, srv)
