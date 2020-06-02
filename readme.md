@@ -5,6 +5,13 @@
 - go 微服务项目目录生成工具
 - mono repo 范式.
 
+## brief: 
+
+- https://github.com/better-go/cookiecutter-go
+    - 生成 mono repo 整个项目目录
+- https://github.com/better-go/cookiecutter-go-app
+    - 生成单个微服务目录
+- 先创建 `mono-repo`, 在切换到 `app/` 下, 创建`单个微服务目录`.
 
 ## install:
 
@@ -17,8 +24,11 @@
 # 安装 cookiecutter:
 brew install cookiecutter
 
-# 拉模板:
+# 在当前目录下, 创建mono repo 项目根目录:
 cookiecutter https://github.com/better-go/cookiecutter-go.git
+
+# 在当前目录下, 创建微服务目录:
+cookiecutter https://github.com/better-go/cookiecutter-go-app.git
 
 ```
 
@@ -27,6 +37,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git
 
 
 - https://cookiecutter.readthedocs.io/en/1.7.2/first_steps.html
+- 创建自己的项目目录模板结构
 
 - `cookiecutter.json`
 
@@ -132,4 +143,7 @@ mkdir {{cookiecutter.repo_name}}
 - https://github.com/pydanny/cookiecutter-django
     - https://github.com/pydanny/cookiecutter-django/blob/master/cookiecutter.json
 - https://github.com/golang-standards/project-layout
-
+- https://github.com/micro/micro
+    - https://github.com/micro/micro/blob/master/client/cli/new/new.go
+- https://github.com/adobe/go-starter
+- https://github.com/gatsbyjs/gatsby-starter-default
