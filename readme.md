@@ -13,6 +13,7 @@
     - 生成单个微服务目录
 - 先创建 `mono-repo`, 在切换到 `app/` 下, 创建`单个微服务目录`.
 
+
 ## install:
 
 - https://github.com/cookiecutter/cookiecutter
@@ -25,10 +26,25 @@
 brew install cookiecutter
 
 # 在当前目录下, 创建mono repo 项目根目录:
-cookiecutter https://github.com/better-go/cookiecutter-go.git
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo"
 
 # 在当前目录下, 创建微服务目录:
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app"
+
 cookiecutter https://github.com/better-go/cookiecutter-go-app.git
+
+```
+
+
+## multi template:
+
+- https://cookiecutter.readthedocs.io/en/1.7.2/advanced/directories.html
+- 支持一个 git 下, 存放多个`目录创建模板`.
+
+```bash
+
+cookiecutter https://github.com/user/repo-name.git --directory="directory1-name"
+
 
 ```
 
