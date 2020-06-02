@@ -1,12 +1,17 @@
 
-# cookiecutter-go-mono-repo
+# cookiecutter-go
 
 - boilerplate, go project starter.
 - go 微服务项目目录生成工具.
-- 同时支持创建 `mono repo` 项目根目录 + `single app` 单个微服务目录
-- 使用建议:
-    - 先创建 `mono-repo`, 在切换到 `app/` 下, 创建`单个微服务目录`.
-- 基于 cookiecutter 实现.
+- feature:
+    - [x] `mono repo`: 支持创建 `mono repo`, git 项目根目录.
+    - [x] `single app`: 支持创建 `single app`, 单个微服务目录.
+    - [x] 可单个使用, 也可同时组合使用
+- usage:
+    - [x] 先创建 `mono-repo` 根目录
+    - [x] 切换到 `app/` 下, 创建 `single app` 单个微服务目录.
+- require:
+    - [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
 
 
 ## quickstart:
@@ -17,8 +22,11 @@
 
 ```bash
 
-# 安装 cookiecutter:
+# Mac OS X 安装 cookiecutter:
 brew install cookiecutter
+
+# Debian/Ubuntu:
+sudo apt-get install cookiecutter
 
 ```
 
