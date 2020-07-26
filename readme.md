@@ -30,35 +30,62 @@ sudo apt-get install cookiecutter
 
 ```
 
-### create mono repo:
 
-- git repo / project root.
-- 根据命令行参数提升, 逐步创建.
+
+
+
+
+
+
+### how to use:
+
+
+- [x] choice 1: create `mono-repo` + `single-app` with `gin`
+- [x] choice 2: create `mono-repo` + `single-app` with `go-micro`
+- [x] choice 3: create `library-repo`
+
+
+#### 1. mono-repo + single-app with gin or go-micro
+
+- 1.1 create mono repo:
+
+
+> git repo / project root.
+>
+> 根据命令行参数提升, 逐步创建.
 
 ```bash
 
 cd your-workspace/
 
-# 在当前目录下, 创建mono repo 项目根目录:
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo"
+# 在当前目录下, 创建mono repo 项目根目录: 使用 gin
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
+
+
+# 在当前目录下, 创建mono repo 项目根目录: 使用 go-micro
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-micro"
+
+
 
 ```
 
 
-### create single app folder:
+- 1.2 create single app folder:
 
 ```bash
 
 cd your-mono-repo-app-create-root/
 
-# 在当前目录下, 创建微服务目录:
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app"
+# 在当前目录下, 创建微服务目录: 使用 gin
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/gin"
+
+# 在当前目录下, 创建微服务目录: 使用 go-micro
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-micro"
 
 
 ```
 
-
-### create library repo:
+#### 2. create library repo:
 
 - `library-repo`
 
