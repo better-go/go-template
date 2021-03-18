@@ -32,20 +32,18 @@ sudo apt-get install cookiecutter
 
 
 
+### feature:
 
 
+- [x] choice 1: create `mono-repo` + `single-app`
+    - support templates:
+        - `go-zero`
+        - `gin`
+        - `go-micro`
+- [x] choice 2: create `library-repo`
 
 
-
-### how to use:
-
-
-- [x] choice 1: create `mono-repo` + `single-app` with `gin`
-- [x] choice 2: create `mono-repo` + `single-app` with `go-micro`
-- [x] choice 3: create `library-repo`
-
-
-#### 1. mono-repo + single-app with gin or go-micro
+#### 1. mono-repo + single-app
 
 - 1.1 create mono repo:
 
@@ -76,6 +74,9 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-
 
 cd your-mono-repo-app-create-root/
 
+# 在当前目录下, 创建微服务目录: 使用 go-micro
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-zero"
+
 # 在当前目录下, 创建微服务目录: 使用 gin
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/gin"
 
@@ -83,7 +84,12 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="singl
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-micro"
 
 
+
 ```
+
+- tips:
+    - 路径参数, 不要添加后缀 : `/`
+    - `go_module_name` 如果 和 `project_folder_name` 不同, 要注意不要传错.
 
 #### 2. create library repo:
 
