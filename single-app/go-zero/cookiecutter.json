@@ -1,0 +1,28 @@
+{
+    "app_name": "current_app_name: like (demo)",
+    "repo_name": "repo_folder_name: like (mall)",
+    "app_go_module_name": "go_mod_name: like (mall)",
+    "app_relative_path": "project/root/path/to/here: like (mall/app/basic/)",
+
+
+    "framework_type": [
+        "go-zero",
+        "go-micro",
+        "gin"
+    ],
+    "db_type": "mysql",
+    "orm_type": [
+        "gorm",
+        "xorm"
+    ],
+    "cache_type": "redis",
+    "mq_type": [
+        "kafka",
+        "rabbitmq",
+        "nsq",
+        "nat"
+    ],
+    "use_grpc": "y",
+    "use_http": "y",
+    "version": "0.1.0"
+}
