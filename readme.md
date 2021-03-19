@@ -1,10 +1,9 @@
 
 # cookiecutter-go
 
-- boilerplate, go project starter.
+- [x] boilerplate, go project starter with `go-zero/gin/go-micro`.
 - [x] go 微服务(`go-zero/gin/go-micro`)项目目录生成工具/脚手架.
 - [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
-
 
 
 ## Feature:
@@ -19,7 +18,7 @@
     - [x] [gin](https://github.com/gin-gonic/gin)
     - [x] [go-micro](https://github.com/asim/go-micro)
 - [x] 可单个使用, 也可同时组合使用
-- usage:
+- [x] usage:
     - [x] 先创建 `mono-repo` 根目录
     - [x] 切换到 `app/` 下, 创建 `single app` 单个微服务目录.
 
