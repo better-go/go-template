@@ -9,7 +9,7 @@ def remove_file(filepath):
 
 
 def mono_repo_create():
-    print("single app create:")
+    print("mono repo create:")
 
 
 if __name__ == '__main__':
