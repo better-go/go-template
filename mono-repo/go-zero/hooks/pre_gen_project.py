@@ -8,7 +8,8 @@ MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 def validate_name(regex):
     # name list:
     names = [
-        '{{ cookiecutter.repo_name}}',
+        '{{cookiecutter.go_module_name}}',
+        '{{cookiecutter.biz_app_name}}',
     ]
 
     # validate:
