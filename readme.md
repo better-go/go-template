@@ -2,25 +2,28 @@
 # cookiecutter-go
 
 - boilerplate, go project starter.
-- go 微服务项目目录生成工具.
-- feature:
-    - [x] `mono repo`: 支持创建 `mono repo`, git 项目根目录.
-        - [x] [go-zero](https://github.com/tal-tech/go-zero)
-        - [x] [gin](https://github.com/gin-gonic/gin)
-        - [x] [go-micro](https://github.com/asim/go-micro)
-    - [x] `single app`: 支持创建 `single app`, 单个微服务目录.
-        - [x] [go-zero](https://github.com/tal-tech/go-zero)
-        - [x] [gin](https://github.com/gin-gonic/gin)
-        - [x] [go-micro](https://github.com/asim/go-micro)
-    - [x] 可单个使用, 也可同时组合使用
+- [x] go 微服务(`go-zero/gin/go-micro`)项目目录生成工具/脚手架.
+- [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
+
+
+
+## Feature:
+
+
+- [x] `mono repo`: 支持创建 `mono repo`, git 项目根目录.
+    - [x] [go-zero](https://github.com/tal-tech/go-zero)
+    - [x] [gin](https://github.com/gin-gonic/gin)
+    - [x] [go-micro](https://github.com/asim/go-micro)
+- [x] `single app`: 支持创建 `single app`, 单个微服务目录.
+    - [x] [go-zero](https://github.com/tal-tech/go-zero)
+    - [x] [gin](https://github.com/gin-gonic/gin)
+    - [x] [go-micro](https://github.com/asim/go-micro)
+- [x] 可单个使用, 也可同时组合使用
 - usage:
     - [x] 先创建 `mono-repo` 根目录
     - [x] 切换到 `app/` 下, 创建 `single app` 单个微服务目录.
-- require:
-    - [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
 
-
-## feature:
+### Intro:
 
 - `go-zero` 微服务:
     - [x] 集成 air 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
@@ -46,15 +49,15 @@
     - [x] log: 集成 uber log
     - [x] db: 集成 gorm + mysql
 
-## 应用案例:
+## User Case:
 
 - [x] https://github.com/zeromicro/zeromall
     - 基于 go-zero 的微服务`B2B2C电商平台`
 
 
-## quickstart:
+## Quick Start:
 
-### install:
+### Install:
 
 - https://cookiecutter.readthedocs.io/en/1.7.2/installation.html
 
@@ -68,7 +71,7 @@ sudo apt-get install cookiecutter
 
 ```
 
-### best practice:
+### Best Practice:
 
 
 - [x] choice 1: create `mono-repo` + `single-app`
@@ -79,9 +82,9 @@ sudo apt-get install cookiecutter
 - [x] choice 2: create `library-repo`
 
 
-#### 1. mono-repo + single-app
+#### 1. Mono-Repo + Single-App
 
-- 1.1 create mono repo:
+- 1.1 create `mono repo`:
 
 
 > git repo / project root.
@@ -108,7 +111,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-
 ```
 
 
-- 1.2 create single app folder:
+- 1.2 create `single app` folder:
 
 ```bash
 
@@ -146,8 +149,9 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="libra
 
 
 
-## mono repo structure:
+## Generate Project Folder Structure:
 
+- [x] Mono Repo:
 
 ```bash
 
@@ -216,7 +220,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="libra
 ```
 
 
-## single app structure:
+- [x] single app:
 
 
 ```bash
@@ -241,16 +245,29 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="libra
 ```
 
 
-## cookiecutter docs:
+## Reference:
+
+- https://github.com/audreyr/cookiecutter-pypackage
+- https://github.com/pydanny/cookiecutter-django
+    - https://github.com/pydanny/cookiecutter-django/blob/master/cookiecutter.json
+- https://github.com/golang-standards/project-layout
+- https://github.com/micro/micro
+    - https://github.com/micro/micro/blob/master/client/cli/new/new.go
+- https://github.com/adobe/go-starter
+- https://github.com/gatsbyjs/gatsby-starter-default
+
+
+
+### cookiecutter docs:
 
 - https://github.com/cookiecutter/cookiecutter
     - `项目脚手架`的脚手架
 
-### install:
+> install:
 
 - https://cookiecutter.readthedocs.io/en/1.7.2/installation.html
 
-### multi template:
+> multi template:
 
 - https://cookiecutter.readthedocs.io/en/1.7.2/advanced/directories.html
 - 支持一个 git 下, 存放多个`目录创建模板`.
@@ -262,7 +279,7 @@ cookiecutter https://github.com/user/repo-name.git --directory="directory1-name"
 
 ```
 
-### create a template:
+> create a template:
 
 
 - https://cookiecutter.readthedocs.io/en/1.7.2/first_steps.html
@@ -292,15 +309,3 @@ mkdir {{cookiecutter.repo_name}}
 
 ```
 
-
-
-## ref:
-
-- https://github.com/audreyr/cookiecutter-pypackage
-- https://github.com/pydanny/cookiecutter-django
-    - https://github.com/pydanny/cookiecutter-django/blob/master/cookiecutter.json
-- https://github.com/golang-standards/project-layout
-- https://github.com/micro/micro
-    - https://github.com/micro/micro/blob/master/client/cli/new/new.go
-- https://github.com/adobe/go-starter
-- https://github.com/gatsbyjs/gatsby-starter-default
