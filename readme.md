@@ -14,6 +14,24 @@
     - [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
 
 
+## feature:
+
+- `go-zero` 微服务:
+    - [x] 集成 air 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
+    - [x] rpc: 集成 grpc
+    - [x] log: 集成 uber log
+    - [x] db: 集成 gorm + mysql
+    - [x] cache: 集成 redis
+    - [x] mq: 集成 rabbitmq
+    - [x] 服务发现: 集成 etcd
+    - [x] cronjob: 集成 cronjob
+
+## 应用案例:
+
+- [x] https://github.com/zeromicro/zeromall
+    - 基于 go-zero 的微服务`B2B2C电商平台`
+
+
 ## quickstart:
 
 ### install:
@@ -30,9 +48,7 @@ sudo apt-get install cookiecutter
 
 ```
 
-
-
-### feature:
+### best practice:
 
 
 - [x] choice 1: create `mono-repo` + `single-app`
@@ -56,11 +72,15 @@ sudo apt-get install cookiecutter
 
 cd your-workspace/
 
-# 在当前目录下, 创建mono repo 项目根目录: 使用 gin
+# 在当前目录下, 创建 go-zero mono repo 项目根目录
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-zero"
+
+
+# 在当前目录下, 创建 gin mono repo 项目根目录
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
 
 
-# 在当前目录下, 创建mono repo 项目根目录: 使用 go-micro
+# 在当前目录下, 创建 go-micro mono repo 项目根目录
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-micro"
 
 
