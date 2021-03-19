@@ -2,7 +2,7 @@ package outer
 
 import (
 	"context"
-	"{{cookiecutter.go_module_name}}/app/basic/demo/internal/domain/{{cookiecutter.app_name}}"
+	"{{cookiecutter.go_module_name}}/app/basic/demo/internal/domain/demo"
 	"{{cookiecutter.go_module_name}}/app/basic/demo/proto/config"
 )
 

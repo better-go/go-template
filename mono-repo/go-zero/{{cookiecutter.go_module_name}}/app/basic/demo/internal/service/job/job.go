@@ -8,7 +8,7 @@ import (
 	"github.com/better-go/pkg/log"
 	"github.com/tal-tech/go-zero/core/collection"
 
-	"{{cookiecutter.go_module_name}}/app/basic/demo/internal/domain/{{cookiecutter.app_name}}"
+	"{{cookiecutter.go_module_name}}/app/basic/demo/internal/domain/demo"
 	"{{cookiecutter.go_module_name}}/app/basic/demo/proto/config"
 )
 
