@@ -5,7 +5,13 @@
 - go 微服务项目目录生成工具.
 - feature:
     - [x] `mono repo`: 支持创建 `mono repo`, git 项目根目录.
+        - [x] [go-zero](https://github.com/tal-tech/go-zero)
+        - [x] [gin](https://github.com/gin-gonic/gin)
+        - [x] [go-micro](https://github.com/asim/go-micro)
     - [x] `single app`: 支持创建 `single app`, 单个微服务目录.
+        - [x] [go-zero](https://github.com/tal-tech/go-zero)
+        - [x] [gin](https://github.com/gin-gonic/gin)
+        - [x] [go-micro](https://github.com/asim/go-micro)
     - [x] 可单个使用, 也可同时组合使用
 - usage:
     - [x] 先创建 `mono-repo` 根目录
@@ -25,6 +31,20 @@
     - [x] mq: 集成 rabbitmq
     - [x] 服务发现: 集成 etcd
     - [x] cronjob: 集成 cronjob
+- `gin` 微服务:
+    - [x] 集成 air 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
+    - [x] rpc: 集成 grpc
+    - [x] log: 集成 uber log
+    - [x] db: 集成 gorm + mysql
+    - [x] cache: 集成 redis
+    - [x] mq: 集成 rabbitmq
+    - [x] 服务发现: 集成 etcd
+    - [x] cronjob: 集成 cronjob
+- `go-micro` 微服务:
+    - [x] 集成 air 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
+    - [x] rpc: 集成 grpc
+    - [x] log: 集成 uber log
+    - [x] db: 集成 gorm + mysql
 
 ## 应用案例:
 
