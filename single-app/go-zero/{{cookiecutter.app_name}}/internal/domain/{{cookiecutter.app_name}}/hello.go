@@ -1,4 +1,4 @@
-package queue
+package {{cookiecutter.app_name}}
 
 import (
 	"{{cookiecutter.app_relative_path}}/{{cookiecutter.app_name}}/internal/dao"

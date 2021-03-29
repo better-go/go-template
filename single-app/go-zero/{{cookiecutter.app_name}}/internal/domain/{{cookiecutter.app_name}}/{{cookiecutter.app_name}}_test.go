@@ -1,4 +1,4 @@
-package queue
+package {{cookiecutter.app_name}}
 
 import (
 	"os"
