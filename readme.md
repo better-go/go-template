@@ -122,7 +122,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-
 
 cd your-mono-repo-app-create-root/
 
-# 在当前目录下, 创建微服务目录: 使用 go-micro
+# 在当前目录下, 创建微服务目录: 使用 go-zero
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-zero"
 
 # 在当前目录下, 创建微服务目录: 使用 gin
