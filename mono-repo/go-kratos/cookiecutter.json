@@ -1,9 +1,9 @@
 {
-    "repo_name": "mono repo name(go.mod): like [mall]",
-    "biz_app_name": "biz_app_name: like[chat]",
+    "repo_name": "[mall]",
+    "biz_app_name": "[cart]",
     "project_short_description": "go-kratos mono repo project generator.",
-    "author_name": "author_name: like[Henry Huang]",
-    "author_email": "author_email: like[hhglory@outlook.com]",
+    "author_name": "[Henry Huang]",
+    "author_email": "[hhglory@outlook.com]",
     "open_source_license": [
         "MIT",
         "BSD",
