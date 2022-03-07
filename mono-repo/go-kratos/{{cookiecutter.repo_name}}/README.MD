@@ -1,5 +1,5 @@
 
-# {{cookiecutter.go_module_name}}:
+# {{cookiecutter.repo_name}}:
 
 > {{cookiecutter.project_short_description}}
 
