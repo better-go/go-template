@@ -57,6 +57,11 @@ tasks:
         cmds:
             - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
 
+    # rust monorepo:
+    new:mono:rs:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/rs"
+
     ################################################################################
 
     #

@@ -11,6 +11,7 @@
     - [x] [go-kratos](https://github.com/go-kratos/kratos)
     - [x] [gin](https://github.com/gin-gonic/gin)
     - [x] [go-micro](https://github.com/asim/go-micro)
+    - [x] [rs]() : rust monorepo
 - [x] `single app`: 支持创建 `single app`, 单个微服务目录.
     - [x] [go-zero](https://github.com/tal-tech/go-zero)
     - [x] [gin](https://github.com/gin-gonic/gin)

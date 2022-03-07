@@ -1,0 +1,12 @@
+{
+    "repo_name": "mono repo name: like [mall]",
+    "biz_app_name": "biz_app_name: like[chat]",
+    "project_short_description": "go-zero mono repo project generator.",
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ]
+}
