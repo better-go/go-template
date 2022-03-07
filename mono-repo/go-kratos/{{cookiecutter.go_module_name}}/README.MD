@@ -1,160 +1,133 @@
-# cookiecutter-go
 
-- [x] boilerplate, go project starter with `go-zero/gin/go-micro`.
-- [x] go 微服务(`go-zero/gin/go-micro`)项目目录生成工具/脚手架.
-- [x] 基于 [cookiecutter](https://github.com/cookiecutter/cookiecutter) 实现.
+# {{cookiecutter.go_module_name}}:
 
-## Feature:
+> {{cookiecutter.project_short_description}}
 
-- [x] `mono repo`: 支持创建 `mono repo`, git 项目根目录.
-    - [x] [go-zero](https://github.com/tal-tech/go-zero)
-    - [x] [go-kratos](https://github.com/go-kratos/kratos)
-    - [x] [gin](https://github.com/gin-gonic/gin)
-    - [x] [go-micro](https://github.com/asim/go-micro)
-- [x] `single app`: 支持创建 `single app`, 单个微服务目录.
-    - [x] [go-zero](https://github.com/tal-tech/go-zero)
-    - [x] [gin](https://github.com/gin-gonic/gin)
-    - [x] [go-micro](https://github.com/asim/go-micro)
-- [x] 可单个使用, 也可同时组合使用
-- [x] usage:
-    - [x] 先创建 `mono-repo` 根目录
-    - [x] 切换到 `app/` 下, 创建 `single app` 单个微服务目录.
+## cookiecutter-go:
 
-## Development Roadmap:
+- https://github.com/better-go/cookiecutter-go
+- 项目目录生成脚手架, 详细使用参考文档
 
-- [x] https://github.com/better-go/cookiecutter-go/projects/1
+## 服务列表:
 
-### Intro:
+- [x] [队列 MQ Proxy](app/basic/queue/readme.md): `app/basic/queue`
+    - HTTP POST 方式: 异步发送消息到 rabbitmq
 
-- `go-zero` 微服务:
-    - [x] 集成 [air](https://github.com/cosmtrek/air) 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
-    - [x] rpc: 集成 grpc
-    - [x] log: 集成 uber log
-    - [x] db: 集成 gorm + mysql
-    - [x] cache: 集成 redis
-    - [x] mq: 集成 rabbitmq
-    - [x] 服务发现: 集成 etcd
-    - [x] cronjob: 集成 cronjob
-- `go-kratos` 微服务:
-    - [x] 集成 `go-kratos` 脚手架自带组件
-    - [x] 集成 air 工具
-    - [x] 集成 grpc/http
-- `gin` 微服务:
-    - [x] 集成 [air](https://github.com/cosmtrek/air) 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
-    - [x] rpc: 集成 grpc
-    - [x] log: 集成 uber log
-    - [x] db: 集成 gorm + mysql
-    - [x] cache: 集成 redis
-    - [x] mq: 集成 rabbitmq
-    - [x] 服务发现: 集成 etcd
-    - [x] cronjob: 集成 cronjob
-- `go-micro` 微服务:
-    - [x] 集成 [air](https://github.com/cosmtrek/air) 工具, watch 项目代码, `自动编译 + hot reload`, 让 go 开发更丝滑(类 Python/Js)
-    - [x] rpc: 集成 grpc
-    - [x] log: 集成 uber log
-    - [x] db: 集成 gorm + mysql
 
-## User Case:
+## 准备工作:
 
-- [x] https://github.com/zeromicro/zeromall
-    - 基于 go-zero 的微服务`B2B2C电商平台`
+### 启动 RabbitMQ 容器:
 
-## Quick Start:
-
-### Install:
-
-- https://cookiecutter.readthedocs.io/en/1.7.2/installation.html
+- `deploy/local/Makefile`
+- 启动 docker 容器
 
 ```bash
 
-# Mac OS X 安装 cookiecutter:
-brew install cookiecutter
+cd deploy/local
 
-# Debian/Ubuntu:
-sudo apt-get install cookiecutter
-
-```
-
-### Best Practice:
-
-- [x] choice 1: create `mono-repo` + `single-app`
-    - support templates:
-        - `go-zero`
-        - `gin`
-        - `go-micro`
-- [x] choice 2: create `library-repo`
-
-#### 1. Mono-Repo + Single-App
-
-- 1.1 create `mono repo`:
-
-> git repo / project root.
->
-> 根据命令行参数提升, 逐步创建.
-
-```bash
-
-cd your-workspace/
-
-# 在当前目录下, 创建 go-zero mono repo 项目根目录
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-zero"
-
-
-# 在当前目录下, 创建 gin mono repo 项目根目录
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
-
-
-# 在当前目录下, 创建 go-micro mono repo 项目根目录
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-micro"
-
+# 启动 docker 容器:
+make run.mq.rabbitmq
 
 
 ```
 
-- 1.2 create `single app` folder:
+- 本地 web UI 查看: http://localhost:15672/#/queues
+    - 队列情况
+
+### 启动 queue 服务:
+
+- `app/basic/queue`
+
 
 ```bash
 
-cd your-mono-repo-app-create-root/
+# 安装项目依赖包:
+make go.mod.tidy
 
-# 在当前目录下, 创建微服务目录: 使用 go-micro
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-zero"
+# 切换到服务目录下:
+cd app/basic/queue
 
-# 在当前目录下, 创建微服务目录: 使用 gin
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/gin"
-
-# 在当前目录下, 创建微服务目录: 使用 go-micro
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-micro"
-
+# 启动服务
+make run.auto.reload
 
 
 ```
 
-- tips:
-    - 路径参数, 不要添加后缀 : `/`
-    - `go_module_name` 如果 和 `project_folder_name` 不同, 要注意不要传错.
 
-#### 2. create library repo:
 
-- `library-repo`
+## Requirements:
 
-```bash
+- go 1.15+
+- go-zero
+- gRPC
+- mysql
+- redis
+- kafka
+- docker + docker-compose
 
-cd your-workspace/
+## QuickStart:
 
-# 在当前目录下, 创建mono repo 项目根目录:
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="library-repo"
+- https://www.yuque.com/tal-tech/go-zero/yaoehb
+
+
+### Development Environment:
+
+- install:
 
 ```
 
-## Generate Project Folder Structure:
+# clone repo:
+git clone
 
-- [x] Mono Repo:
+# enter project root:
+cd .
 
+# install require pkg:
+make go.mod.tidy
+
+```
+
+
+- run 示例服务: `app/basic/demo`
+
+```
+cd ./app/basic/demo
+
+# 启动 API 服务:
+make run.demo
+
+# 或者使用: 基于 air, watch 该服务目录, 修改后, 自动 hot reload, 无需重新编译
+make run.auto.reload
+
+
+# http echo test:
+make curl.api
+
+
+#
+# will print:
+#
+-> % make curl.api
+curl -i http://localhost:8888/from/you
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Thu, 18 Feb 2021 10:48:23 GMT
+Content-Length: 25
+
+{"message":"hello world"}%
+
+
+```
+
+
+## Structure:
 
 - 目录结构简略说明: 对整体目录的 quick look.
 
+
 ```html
+
+
 -> % tree . -L 3
 .
 ├── app
@@ -175,11 +148,39 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="libra
 ├── infra                // 基础设施
 │   └── tool
 └── pkg                  // 项目积累的 utility 代码库, 与业务无关
+
+
 ```
+
+
+- 代码调用链路说明: 以 `app/basic/demo` 服务为例(自顶向下调用)
+    - Cmd 启动入口: `app/basic/demo/cmd/main.go`
+    - Service 入口: `app/basic/demo/internal/service/service.go`
+        - 对外 API 网关: `app/basic/demo/internal/service/outer/outer.go`
+        - 对内 RPC 网关: `app/basic/demo/internal/service/inner/inner.go`
+        - 对内 Admin API 网关: `app/basic/demo/internal/service/admin/admin.go`
+        - 对内 Job 网关: `app/basic/demo/internal/service/job/job.go`
+    - Proto 数据定义:
+        - API 层: `app/basic/demo/proto/api/api.proto`
+        - Config 层: `app/basic/demo/proto/config/config.proto`
+        - Model 层: `app/basic/demo/proto/model/model.proto`
+    - Router 路由注册: `app/basic/demo/internal/router/router.go`
+    - Domain 业务领域:
+        - 某业务单元: `app/basic/demo/internal/domain/demo/demo.go`
+    - Dao 数据层操作:
+        - Meta 聚合(收敛 Dao 层资源): `app/basic/demo/internal/dao/meta.go`
+        - DB 层: `app/basic/demo/internal/dao/db/db.go`
+        - Cache 层: `app/basic/demo/internal/dao/cache/cache.go`
+
 
 - 目录结构详细说明:
 
+
+
 ```html
+
+
+
 -> % tree . -L 6
 .
 ├── LICENSE
@@ -257,57 +258,17 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="libra
 └── pkg                                            // 项目中逐步积累的 utility 代码库
 
 46 directories, 24 files
-```
-
-- [x] single app:
-
-```bash
-
--> % tree -L 3 ./single-app/{{cookiecutter.app_name}}
-./single-app/{{cookiecutter.app_name}}
-├── cmd
-│   └── main.go
-├── configs
-│   └── configs.toml
-├── internal
-│   └── dao
-│       └── db
-├── proto
-│   └── api
-│       └── api.go
-└── readme.md
-
-7 directories, 4 files
 
 
 ```
 
-## 调用链路说明:
-
-- 代码调用链路说明: 以 `app/basic/demo` 服务为例(自顶向下调用)
-    - Cmd 启动入口: `app/basic/demo/cmd/main.go`
-    - Service 入口: `app/basic/demo/internal/service/service.go`
-        - 对外 API 网关: `app/basic/demo/internal/service/outer/outer.go`
-        - 对内 RPC 网关: `app/basic/demo/internal/service/inner/inner.go`
-        - 对内 Admin API 网关: `app/basic/demo/internal/service/admin/admin.go`
-        - 对内 Job 网关: `app/basic/demo/internal/service/job/job.go`
-    - Proto 数据定义:
-        - API 层: `app/basic/demo/proto/api/api.proto`
-        - Config 层: `app/basic/demo/proto/config/config.proto`
-        - Model 层: `app/basic/demo/proto/model/model.proto`
-    - Router 路由注册: `app/basic/demo/internal/router/router.go`
-    - Domain 业务领域:
-        - 某业务单元: `app/basic/demo/internal/domain/demo/demo.go`
-    - Dao 数据层操作:
-        - Meta 聚合(收敛 Dao 层资源): `app/basic/demo/internal/dao/meta.go`
-        - DB 层: `app/basic/demo/internal/dao/db/db.go`
-        - Cache 层: `app/basic/demo/internal/dao/cache/cache.go`
-
-## User Manual:
-
-- [x] https://github.com/better-go/cookiecutter-go/wiki/manual
-- [x] 初始化好微服务目录, 如何使用.
 
 ## Reference:
 
-- [x] https://github.com/better-go/cookiecutter-go/wiki/reference
+
+- https://github.com/macrozheng/mall
+- https://zeromicro.github.io/go-zero/rpc-dir.html
+- rest: https://www.yuque.com/tal-tech/go-zero/bqdcb3
+- zrpc(grpc+): https://www.yuque.com/tal-tech/go-zero/rslrhx
+- 项目目录脚手架: https://github.com/better-go/cookiecutter-go
+
