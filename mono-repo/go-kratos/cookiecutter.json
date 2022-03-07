@@ -1,5 +1,5 @@
 {
-    "go_module_name": "mono repo go_module_name(go.mod): like [mall]",
+    "repo_name": "mono repo name(go.mod): like [mall]",
     "biz_app_name": "biz_app_name: like[chat]",
     "project_short_description": "go-kratos mono repo project generator.",
     "author_name": "author_name: like[Henry Huang]",
