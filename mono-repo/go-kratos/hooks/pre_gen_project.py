@@ -10,8 +10,6 @@ def validate_name(regex):
     names = [
         '{{cookiecutter.repo_name}}',
         '{{cookiecutter.biz_app_name}}',
-        '{{cookiecutter.author_name}}',
-        '{{cookiecutter.author_email}}',
     ]
 
     # validate:
