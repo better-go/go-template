@@ -1,4 +1,4 @@
-module {{cookiecutter.go_module_name}}
+module {{cookiecutter.repo_name}}
 
 go 1.17
 

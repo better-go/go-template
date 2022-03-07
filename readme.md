@@ -71,6 +71,11 @@
 # Mac OS X 安装 cookiecutter:
 brew install cookiecutter
 
+# Python + pipx:
+brew install pipx
+pipx ensurepath
+pipx install cookiecutter
+
 # Debian/Ubuntu:
 sudo apt-get install cookiecutter
 
