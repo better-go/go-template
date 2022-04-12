@@ -1,74 +1,49 @@
-
 # {{cookiecutter.repo_name}}:
 
 > {{cookiecutter.project_short_description}}
 
-## cookiecutter-go:
+## Cookiecutter-Go:
 
 - https://github.com/better-go/cookiecutter-go
 - 项目目录生成脚手架, 详细使用参考文档
 
-## 服务列表:
+## Go-Kratos 定制功能:
 
-- [x] [队列 MQ Proxy](app/basic/queue/readme.md): `app/basic/queue`
-    - HTTP POST 方式: 异步发送消息到 rabbitmq
+- [go kratos 中间件](https://go-kratos.dev/docs/category/%E4%B8%AD%E9%97%B4%E4%BB%B6)
 
+> 集成功能:
 
-## 准备工作:
-
-### 启动 RabbitMQ 容器:
-
-- `deploy/local/Makefile`
-- 启动 docker 容器
-
-```bash
-
-cd deploy/local
-
-# 启动 docker 容器:
-make run.mq.rabbitmq
-
-
-```
-
-- 本地 web UI 查看: http://localhost:15672/#/queues
-    - 队列情况
-
-### 启动 queue 服务:
-
-- `app/basic/queue`
-
-
-```bash
-
-# 安装项目依赖包:
-make go.mod.tidy
-
-# 切换到服务目录下:
-cd app/basic/queue
-
-# 启动服务
-make run.auto.reload
-
-
-```
-
+- [ ] 参数校验
+- [ ] 日志集成
+- [ ] tracing 集成: OpenTelemetry, jaeger
+- [x] 服务发现/注册: consul
+- [ ] grpc
+- [ ] server: 限流器
+- [ ] client: 熔断器
+- [ ] 监控: prometheus
 
 
 ## Requirements:
 
+> 语言 & 框架:
+
 - go 1.15+
-- go-zero
-- gRPC
-- mysql
-- redis
-- kafka
-- docker + docker-compose
+- Web Framework: go-kratos
+- RPC: gRPC
+
+> 依赖中间件:
+
+- 数据库: mysql
+- 缓存: redis
+- 消息队列: kafka
+- 服务注册/发现: consul
+- Tracing: jaeger
+- 日志平台: ELK (Elasticsearch, Logstash, Kibana)
+- 部署: docker + docker-compose
 
 ## QuickStart:
 
-- https://www.yuque.com/tal-tech/go-zero/yaoehb
-
+- https://go-kratos.dev/docs/component/middleware/overview
 
 ### Development Environment:
 
@@ -76,54 +51,19 @@ make run.auto.reload
 
 ```
 
-# clone repo:
-git clone
-
-# enter project root:
-cd .
-
-# install require pkg:
-make go.mod.tidy
 
 ```
-
 
 - run 示例服务: `app/basic/demo`
 
 ```
-cd ./app/basic/demo
-
-# 启动 API 服务:
-make run.demo
-
-# 或者使用: 基于 air, watch 该服务目录, 修改后, 自动 hot reload, 无需重新编译
-make run.auto.reload
-
-
-# http echo test:
-make curl.api
-
-
-#
-# will print:
-#
--> % make curl.api
-curl -i http://localhost:8888/from/you
-HTTP/1.1 200 OK
-Content-Type: application/json
-Date: Thu, 18 Feb 2021 10:48:23 GMT
-Content-Length: 25
-
-{"message":"hello world"}%
 
 
 ```
 
-
 ## Structure:
 
 - 目录结构简略说明: 对整体目录的 quick look.
-
 
 ```html
 
@@ -152,7 +92,6 @@ Content-Length: 25
 
 ```
 
-
 - 代码调用链路说明: 以 `app/basic/demo` 服务为例(自顶向下调用)
     - Cmd 启动入口: `app/basic/demo/cmd/main.go`
     - Service 入口: `app/basic/demo/internal/service/service.go`
@@ -174,8 +113,6 @@ Content-Length: 25
 
 
 - 目录结构详细说明:
-
-
 
 ```html
 
@@ -262,9 +199,7 @@ Content-Length: 25
 
 ```
 
-
 ## Reference:
-
 
 - https://github.com/macrozheng/mall
 - https://zeromicro.github.io/go-zero/rpc-dir.html
