@@ -1,4 +1,4 @@
-# cookiecutter-go
+# go-template
 
 - [x] boilerplate, go project starter with `go-zero/gin/go-micro`.
 - [x] go 微服务(`go-zero/gin/go-micro`)项目目录生成工具/脚手架.
