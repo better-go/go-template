@@ -1,0 +1,73 @@
+version: "3"
+
+#
+# sub namespace: https://taskfile.dev/#/usage?id=including-other-taskfiles
+#
+#includes:
+#  rs:
+#    taskfile: ./iDev/coding/rs/
+#    dir: ./iDev/coding/rs/
+
+#
+# global vars: https://taskfile.dev/#/usage?id=variables
+#
+vars:
+  VAR1: "some-var"
+
+# global env:
+env:
+  ENV1: testing
+
+# env file:
+dotenv:
+  - .env
+
+################################################################################################
+
+tasks:
+  default:
+    cmds:
+      - task: init
+
+  init:
+    cmds:
+      - cp .env.local .env
+      - task: install
+
+  install:
+    cmds:
+      - brew install cookiecutter
+      - brew install go-task/tap/go-task
+      - go install github.com/go-kratos/kratos/cmd/kratos/v2@latest
+
+  ################################################################################
+
+  #
+  # 创建 monorepo + go-kratos:
+  #
+  new:mono:
+    cmds:
+      - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-kratos"
+
+  new:app:
+    cmds:
+      - kratos new helloworld
+
+  ################################################################################
+
+  run:app:
+    cmds:
+      - go generate ./...
+      - kratos run
+
+  api:test:
+    cmds:
+      - curl 'http://127.0.0.1:8000/helloworld/kratos'
+
+  ################################################################################
+
+  push:
+    cmds:
+      - git push origin master --tags
+      - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
+

@@ -1,0 +1,95 @@
+version: "3"
+
+#
+# sub namespace: https://taskfile.dev/#/usage?id=including-other-taskfiles
+#
+#includes:
+#  rs:
+#    taskfile: ./iDev/coding/rs/
+#    dir: ./iDev/coding/rs/
+
+#
+# global vars: https://taskfile.dev/#/usage?id=variables
+#
+vars:
+    VAR1: "some-var"
+
+# global env:
+env:
+    ENV1: testing
+
+# env file:
+dotenv:
+    - .env
+
+################################################################################################
+
+tasks:
+    default:
+        cmds:
+            - task: init
+
+    init:
+        cmds:
+            - cp .env.local .env
+            - task: install
+
+    install:
+        cmds:
+            - brew install cookiecutter
+            - brew install go-task/tap/go-task
+
+    ################################################################################
+
+    #
+    # 创建 monorepo + go-kratos:
+    #
+    new:mono:go-kratos:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-kratos"
+
+    # 创建 monorepo + go-zero:
+    new:mono:go-zero:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-zero"
+
+    new:mono:gin:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
+
+    # rust monorepo:
+    new:mono:rs:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/rs"
+
+    ################################################################################
+
+    #
+    #
+    #
+    new:app:go-kratos:
+        cmds:
+            - |
+              cd your-mono-repo-app-create-root/; \
+              cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-kratos"
+
+    new:app:go-zero:
+        cmds:
+            - |
+                cd your-mono-repo-app-create-root/; \
+                cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-zero"
+
+
+    ################################################################################
+
+    new:lib:
+        cmds:
+            - cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="library-repo"
+
+    ################################################################################
+
+    push:
+        cmds:
+            - git push origin master --tags
+            - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
+
