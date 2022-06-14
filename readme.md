@@ -323,8 +323,6 @@ Model │ │ └── model.proto
 
 
 
+## Contributors:
 
-
-<!-- readme: contributors -start -->
-<!-- readme: contributors -end -->
 
