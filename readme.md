@@ -124,8 +124,10 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"m
 
 cd your-mono-repo-app-create-root/
 
-# In the current directory, create a microservice directory: use go-micro
+
+# In the current directory, create a microservice directory: use go-zero
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"single-app/go-zero"
+
 
 # In the current directory, create a microservice directory: use gin
 cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"single-app/gin"
