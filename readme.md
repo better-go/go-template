@@ -1,4 +1,4 @@
-English | [简体中文](readme.md)
+English | [简体中文](readme-cn.md)
 # go-template
 
 - [x] boilerplate, go project starter with `go-zero/gin/go-micro`.
