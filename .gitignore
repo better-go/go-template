@@ -41,3 +41,5 @@ tmp/
 
 # goreleaser artifacts
 dist/
+translate_all_readme.sh
+format_lines.py
