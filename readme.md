@@ -104,15 +104,15 @@ sudo apt-get install cookiecutter
 cd your-workspace/
 
 # In the current directory, create the root directory of the go-zero mono repo project
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"mono-repo/go-zero"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-zero"
 
 
 # In the current directory, create the gin mono repo project root directory
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"mono-repo/gin"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/gin"
 
 
 # In the current directory, create the root directory of the go-micro mono repo project
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"mono-repo/go-micro"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="mono-repo/go-micro"
 
 
 
@@ -126,14 +126,14 @@ cd your-mono-repo-app-create-root/
 
 
 # In the current directory, create a microservice directory: use go-zero
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"single-app/go-zero"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-zero"
 
 
 # In the current directory, create a microservice directory: use gin
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"single-app/gin"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/gin"
 
 # In the current directory, create a microservice directory: use go-micro
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"single-app/go-micro"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="single-app/go-micro"
 
 
 
@@ -152,7 +152,7 @@ cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"s
 cd your-workspace/
 
 # In the current directory, create the mono repo project root directory:
-cookiecutter https://github.com/better-go/cookiecutter-go.git --directoryu003d"library-repo"
+cookiecutter https://github.com/better-go/cookiecutter-go.git --directory="library-repo"
 
 ```
 
